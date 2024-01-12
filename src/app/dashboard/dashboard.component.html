@@ -1,0 +1,90 @@
+<button (click)="showUserForm()">ADD USER</button>
+<button (click)="showUserList()">LIST USER</button>
+<form *ngIf="show" (submit)="onSignup(SignupForm)" #SignupForm="ngForm">
+  <h1>FORM</h1>
+  <input
+    type="name"
+    name="name"
+    ngModel
+    placeholder="name"
+    #nameInput="ngModel"
+    required
+  />
+  <br />
+  <input
+    type="email"
+    name="email"
+    ngModel
+    placeholder="email"
+    #emailInput="ngModel"
+    required
+    email
+  />
+  <br />
+  <input
+    type="password"
+    name="password"
+    ngModel
+    placeholder="password"
+    #passwordInput="ngModel"
+    required
+    password
+  />
+  <br />
+  <input
+    matInput
+    type="text"
+    name="gender"
+    ngModel
+    placeholder="gender"
+    #genderInput="ngModel"
+    required
+  />
+  <br />
+  <input
+    matInput
+    type="text"
+    name="mobile"
+    ngModel
+    placeholder="mobile"
+    #mobileInput="ngModel"
+    required
+  />
+  <br />
+  <input
+    matInput
+    type="number"
+    name="amount"
+    ngModel
+    placeholder="amount"
+    #amountInput="ngModel"
+    required
+  />
+  <br />
+  <input type="file" name="image" id="file" (change)="onFileChanged($event)" />
+  <br />
+  <button type="submit">REGISTER</button>
+</form>
+
+<div class="table" *ngIf="showList">
+  <table class="table">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">NAME</th>
+        <th scope="col">EMAIL</th>
+        <th scope="col">MOBILE</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let item of users">
+      <tr>
+        <td scope="row">{{ item.id }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.email }}</td>
+        <td>{{ item.mobile }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<button id="home" routerLink="/">HOME</button>

@@ -1,0 +1,72 @@
+<section>
+  <form (submit)="onSignup(SignupForm)" #SignupForm="ngForm">
+    <input
+      type="name"
+      name="name"
+      ngModel
+      placeholder="name"
+      #nameInput="ngModel"
+      required
+    />
+    <br />
+    <input
+      type="email"
+      name="email"
+      ngModel
+      placeholder="email"
+      #emailInput="ngModel"
+      required
+      email
+    />
+    <br />
+    <input
+      type="password"
+      name="password"
+      ngModel
+      placeholder="password"
+      #passwordInput="ngModel"
+      required
+      password
+    />
+    <br />
+    <input
+      matInput
+      type="text"
+      name="gender"
+      ngModel
+      placeholder="gender"
+      #genderInput="ngModel"
+      required
+    />
+    <br />
+    <input
+      matInput
+      type="text"
+      name="mobile"
+      ngModel
+      placeholder="mobile"
+      #mobileInput="ngModel"
+      required
+    />
+    <br />
+    <input
+      matInput
+      type="number"
+      name="amount"
+      ngModel
+      placeholder="amount"
+      #amountInput="ngModel"
+      required
+    />
+    <br />
+    <input
+      type="file"
+      name="image"
+      id="file"
+      (change)="onFileChanged($event)"
+    />
+    <br />
+    <button type="submit">REGISTER</button>
+  </form>
+  <button id="home" routerLink="/">HOME</button>
+</section>

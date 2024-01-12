@@ -1,0 +1,23 @@
+<form (submit)="onLogin(LoginForm)" #LoginForm="ngForm">
+  <input
+    type="email"
+    name="email"
+    ngModel
+    placeholder="email"
+    #emailInput="ngModel"
+    required
+    email
+  />
+  <br />
+  <input
+    type="password"
+    name="password"
+    ngModel
+    placeholder="password"
+    #passwordInput="ngModel"
+    required
+  />
+
+  <button type="submit">Login</button>
+</form>
+<button id="home" routerLink="/">HOME</button>
